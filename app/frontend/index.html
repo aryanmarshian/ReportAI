@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReportAI Console</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <main class="shell">
+      <section class="panel panel-hero">
+        <p class="eyebrow">Autonomous Investment Analysis</p>
+        <h1>ReportAI Console</h1>
+        <p class="sub">
+          Submit a task, monitor orchestration state, inspect planner output, and read the final report.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Create Task</h2>
+        <form id="analyze-form">
+          <label>
+            User ID
+            <input id="user-id" type="number" min="1" value="1" required />
+          </label>
+          <label>
+            Analysis Input
+            <textarea id="input-text" rows="5" required>
+Analyze Tesla as a long-term investment focusing on growth, valuation, and downside risk.
+            </textarea>
+          </label>
+          <button id="submit-btn" type="submit">Launch Analysis</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Task State</h2>
+        <div class="status-row">
+          <span class="meta">Task ID</span>
+          <code id="task-id">-</code>
+        </div>
+        <div class="status-row">
+          <span class="meta">Status</span>
+          <span id="status-chip" class="chip chip-idle">idle</span>
+        </div>
+        <p id="message" class="message"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Planner Output</h2>
+        <div id="plan-output" class="list-view">
+          <p class="empty">No plan yet.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Final Report</h2>
+        <div id="report-output" class="list-view">
+          <p class="empty">No report yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
